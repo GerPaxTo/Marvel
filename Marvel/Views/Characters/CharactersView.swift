@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct CharactersView: View {
-    @StateObject var viewModel : viewModelCharacters
+    @StateObject var viewModel : viewModelMarvel
     @State private var filter = ""
     
     var body: some View {
         NavigationStack{
             List{
-                if let chars = viewModel.chars?.data.results {
+                if let chars = viewModel.characters?.data.results {
                     ForEach(chars) { char in
                         NavigationLink {
-                            //Detalle view
-                            //HeroesDetailView(hero: hero)
+                            ListaSeriesView(id: char.id, char: char.name)
                         } label: {
                             //HeroesRowView(hero: hero)
                             charactersRowView(chars: char)
@@ -31,8 +30,8 @@ struct CharactersView: View {
     }
 }
 
-struct HeroesView_Previews: PreviewProvider {
+struct CharactersView_Previews: PreviewProvider {
     static var previews: some View {
-        CharactersView(viewModel: viewModelCharacters(testing: true))
+        CharactersView(viewModel: viewModelMarvel(testing: true))
     }
 }

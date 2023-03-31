@@ -1,5 +1,5 @@
 //
-//  RootViewModel.swift
+//  viewModelMarvel.swift
 //  Marvel
 //
 //  Created by Gerardo Paxtian on 28/03/23.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class RootViewModel: ObservableObject {
+final class viewModelMarvel: ObservableObject {
     @Published var status: Status = Status.none
     @Published var characters : MarvelChar?
     
@@ -57,15 +57,10 @@ final class RootViewModel: ObservableObject {
             .store(in: &suscriptors)
     }
     
-    
     func LoadCharactersTesting() -> Void {
-//        let b1 =  Bootcamp(id: UUID().uuidString, name: "Mobile 12")
-//        let b2 =  Bootcamp(id: UUID().uuidString, name: "Mobile 11")
-//        let b3 =  Bootcamp(id: UUID().uuidString, name: "Web 12")
-//        let b4 =  Bootcamp(id: UUID().uuidString, name: "Web 11")
-//        let b5 =  Bootcamp(id: UUID().uuidString, name: "Devops 8")
-//        let b6 =  Bootcamp(id: UUID().uuidString, name: "Devpops 7")
-//        self.bootcamps = [b1,b2,b3,b4,b5,b6]
+        let char = MarvelChar(data: ApiCharacterData(count: 1, results: [Character(id: 1011334, name: "3-D Man", description: "", thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784", extension: "jpg"), urls: [["String" : "String"]])]))
+
+        self.characters = char
     }
     
 }

@@ -23,6 +23,8 @@ struct charactersRowView: View {
 
             } placeholder: {
                 Text("Cargando foto...")
+                    .font(.caption)
+                    .foregroundColor(.gray)
             }
             
             Text("\(chars.name)")

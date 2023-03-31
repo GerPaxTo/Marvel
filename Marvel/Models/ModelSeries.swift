@@ -24,26 +24,24 @@ struct DataClass: Codable  {
 struct Result: Codable, Identifiable  {
     var id: Int
     var title: String
-    var resultDescription: String?
+    var description: String?
     var resourceURI: String
-    var urls: [URLElement]
+    var urls: [URLElement]?
     var startYear, endYear: Int
     var rating, type: String
-    var modified: Date
+    var modified: String
     var thumbnail: ThumbnailSer
     var creators: Creators
     var characters: Characters
     var stories: Stories
     var comics, events: Characters
-    var next, previous: Next?
+    var next, previous:  Next?
 }
 
-// MARK: - Characters
-struct Characters: Codable  {
-    var available: Int
-    var collectionURI: String
-    var items: [Next]
-    var returned: Int
+// MARK: - URLElement
+struct URLElement: Codable  {
+    var type: String
+    var url: String
 }
 
 // MARK: - Next
@@ -66,6 +64,14 @@ struct CreatorsItem: Codable  {
     var name, role: String
 }
 
+// MARK: - Characters
+struct Characters: Codable  {
+    var available: Int
+    var collectionURI: String
+    var items: [Next]
+    var returned: Int
+}
+
 // MARK: - Stories
 struct Stories: Codable  {
     var available: Int
@@ -78,24 +84,14 @@ struct Stories: Codable  {
 struct StoriesItem: Codable  {
     var resourceURI: String
     var name: String
-    var type: TypeEnum
-}
-
-enum TypeEnum: Codable  {
-    case cover
-    case empty
-    case interiorStory
+    var type: String
 }
 
 // MARK: - Thumbnail
 struct ThumbnailSer: Codable  {
     var path: String
-    var thumbnailExtension: String
+    var `extension`: String
 }
 
-// MARK: - URLElement
-struct URLElement: Codable  {
-    var type: String
-    var url: String
-}
+
 

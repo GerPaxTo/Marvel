@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ErrorView: View {
-    @EnvironmentObject var viewModel: RootViewModel
+    @EnvironmentObject var viewModel: viewModelMarvel
     private var textError:String
     
     init(error:String){
@@ -18,6 +18,10 @@ struct ErrorView: View {
     var body: some View {
         VStack{
             Spacer()
+            
+            Image(decorative: "Logo")
+                .resizable()
+                .frame(width:200, height: 110)
             
             Image(systemName: "exclamationmark.triangle.fill")
                 .resizable()
@@ -48,13 +52,15 @@ struct ErrorView: View {
             .cornerRadius(15)
             .shadow(radius: 10.0, x:20, y: 10)
             .id(2)
+            
+            Spacer()
         }
     }
 }
 
 struct ErrorView_Previews: PreviewProvider {
     static var previews: some View {
-        ErrorView(error: "Error de prueba")
-            .environmentObject(RootViewModel())
+        ErrorView(error: "Error de lectura")
+            .environmentObject(viewModelMarvel())
     }
 }

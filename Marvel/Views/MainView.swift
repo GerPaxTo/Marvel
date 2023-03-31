@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @State private var selection = 0
-    @EnvironmentObject var rootviewModel: RootViewModel
+    @EnvironmentObject var rootviewModel: viewModelMarvel
     
     var body: some View {
         
@@ -17,11 +17,11 @@ struct MainView: View {
             VStack{
                 Image(decorative: "Logo")
                     .resizable()
-                    .frame(width:150, height: 75)
+                    .frame(width:150, height: 50)
                 
                 TabView(selection: $selection){
                     //Tab1
-                    CharactersView(viewModel: viewModelCharacters())
+                    CharactersView(viewModel: viewModelMarvel())
                     
                     
                 }
@@ -34,6 +34,6 @@ struct MainView: View {
 struct PrincipalView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
-            .environmentObject(RootViewModel())
+            .environmentObject(viewModelMarvel())
     }
 }

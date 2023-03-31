@@ -82,7 +82,7 @@ struct BaseNetwork {
     }
     
     //lista Characters
-    func getSessionSeries(id:String) -> URLRequest{
+    func getSessionSeries(id:Int) -> URLRequest{
         let urlcad : String = "\(server)\(endpoints.Characters.rawValue)/\(id)/series?apikey=\(apiKey)&ts=\(ts)&hash=\(hash)"
         
         
