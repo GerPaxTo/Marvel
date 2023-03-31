@@ -22,6 +22,7 @@ struct SeriesView: View {
                         .cornerRadius(20)
                         .frame(width: 300, height: 400)
                         .padding()
+                        .id(0)
                         
                 } placeholder: {
                     Image(decorative: "Hulk")
@@ -33,17 +34,20 @@ struct SeriesView: View {
                     .frame(width: 300, height: 400)
                     .opacity(0.6)
                     .cornerRadius(20)
+                    .id(1)
                 VStack{
                     Text("\(result.title)")
                         .font(.title2)
                         .foregroundColor(.white)
                         .bold()
                         .frame(width: 280)
+                        .id(2)
                     
                     Text("\(result.description ?? "")")
                         .font(.caption)
                         .foregroundColor(.white)
                         .frame(width: 280)
+                        .id(3)
 
                 }
             }

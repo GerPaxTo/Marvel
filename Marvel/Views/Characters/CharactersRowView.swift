@@ -20,6 +20,7 @@ struct charactersRowView: View {
                     .cornerRadius(10)
                     .padding([.leading, .trailing], 20)
                     .opacity(0.9)
+                    .id(0)
 
             } placeholder: {
                 Text("Cargando foto...")
@@ -31,6 +32,7 @@ struct charactersRowView: View {
                 .font(.title2)
                 .foregroundColor(.red)
                 .bold()
+                .id(1)
         }
     }
 }
